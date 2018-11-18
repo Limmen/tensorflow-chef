@@ -241,6 +241,16 @@ for python in python_versions
        exit 12
     fi
 
+    yes | ${CONDA_DIR}/envs/${PROJECT}/bin/pip install --upgrade matplotlib
+    if [ $? -ne 0 ] ; then
+       exit 13
+    fi
+
+    yes | ${CONDA_DIR}/envs/${PROJECT}/bin/pip install --upgrade seaborn
+    if [ $? -ne 0 ] ; then
+       exit 14
+    fi
+
     EOF
   end
 
